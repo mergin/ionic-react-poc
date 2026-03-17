@@ -1,0 +1,10 @@
+{
+  "js/ts.preferences.autoImportSpecifierExcludeRegexes": ["^@ionic/react$"],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "js/ts.preferences.importModuleSpecifier": "non-relative",
+  "chat.tools.terminal.autoApprove": {
+    "npx playwright": true
+  },
+  "cSpell.words": ["Ionicons", "Picsum", "repost"]
+}

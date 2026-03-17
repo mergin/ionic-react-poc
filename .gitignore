@@ -23,6 +23,7 @@
 /.nx/cache
 /.vscode/*
 !/.vscode/extensions.json
+!/.vscode/settings.json
 .idea
 
 npm-debug.log*
