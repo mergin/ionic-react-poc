@@ -13,7 +13,7 @@
     "test.e2e:install": "playwright install chromium",
     "test:perf": "playwright test e2e/performance/tabs-performance.spec.ts",
     "test.unit": "vitest",
-    "test:all": "npm run test && npm run test:render && npm run test:e2e",
+    "test:all": "npm run test && npm run test:render && npm run test.e2e",
     "lint": "eslint .",
     "format": "prettier --check .",
     "format:write": "prettier --write .",
@@ -82,5 +82,5 @@
     "vitest": "^0.34.6",
     "web-vitals": "^5.1.0"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic React project"
 }

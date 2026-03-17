@@ -32,8 +32,8 @@
 
 ## Phase 5: Documentation and hardening
 
-- [ ] Expand README with architecture, runbook, and migration notes.
-- [ ] Document API mocking strategy and real API toggle strategy.
-- [ ] Document known gaps vs Angular PoC and next migration increments.
+- [x] Expand README with architecture, runbook, and migration notes.
+- [x] Document API mocking strategy and real API toggle strategy.
+- [x] Document known gaps vs Angular PoC and next migration increments.
 - [x] Add CI workflow for lint, test, build, and perf smoke.
 - [x] Replicate original app pre-commit behavior with Husky + lint-staged + commitlint.
