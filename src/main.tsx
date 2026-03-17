@@ -4,6 +4,10 @@ import App from './App';
 import { I18nProvider } from './i18n';
 import { initWebVitalsReporting } from './performance/web-vitals';
 
+/**
+ * Starts the MSW browser worker in development mode.
+ * @returns Promise resolved after worker startup.
+ */
 async function bootstrapMocks(): Promise<void> {
   if (!import.meta.env.DEV) {
     return;

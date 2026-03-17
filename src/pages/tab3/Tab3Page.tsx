@@ -11,8 +11,8 @@ import {
   IonToggle,
   IonToolbar,
 } from '@ionic/react';
-import { LanguageSelector } from '../components/LanguageSelector';
-import { useI18n } from '../i18n';
+import { LanguageSelector } from '../../components/language-selector';
+import { useI18n } from '../../i18n';
 import {
   buildFallbackWeatherData,
   formatDateTime,
@@ -23,8 +23,8 @@ import {
   type OpenWeatherCurrent,
   type OpenWeatherForecast,
   type Unit,
-} from '../features/weather/mapper';
-import './Tab3.css';
+} from '../../features/weather/mapper';
+import './Tab3Page.css';
 
 const BASE_URL = '/openweather';
 const DEFAULT_CITY = 'Madrid';

@@ -37,3 +37,7 @@
 - [x] Document known gaps vs Angular PoC and next migration increments.
 - [x] Add CI workflow for lint, test, build, and perf smoke.
 - [x] Replicate original app pre-commit behavior with Husky + lint-staged + commitlint.
+
+## Deferred follow-ups
+
+- [ ] Reduce Vite build chunk-size warnings by introducing route-level code splitting and/or manual chunk configuration.

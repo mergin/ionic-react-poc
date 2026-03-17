@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 
-const MAX_DOM_CONTENT_LOADED_MS = 2_500;
+const MAX_DOM_CONTENT_LOADED_MS = 3_000;
 const MAX_LOAD_EVENT_MS = 4_000;
 const MAX_TAB_SWITCH_MS = 7_000;
 

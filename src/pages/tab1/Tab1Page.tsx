@@ -16,9 +16,9 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-import { LanguageSelector } from '../components/LanguageSelector';
-import { useI18n } from '../i18n';
-import './Tab1.css';
+import { LanguageSelector } from '../../components/language-selector';
+import { useI18n } from '../../i18n';
+import './Tab1Page.css';
 
 interface SocialPost {
   id: string;
@@ -99,7 +99,10 @@ const Tab1: React.FC = () => {
                 <IonCardHeader>
                   <IonItem lines="none">
                     <IonAvatar slot="start">
-                      <img src={post.avatarUrl} alt={t('social.avatarAlt', { name: post.author.displayName })} />
+                      <img
+                        src={post.avatarUrl}
+                        alt={t('social.avatarAlt', { name: post.author.displayName })}
+                      />
                     </IonAvatar>
                     <IonLabel>
                       <IonCardTitle>{post.author.displayName}</IonCardTitle>

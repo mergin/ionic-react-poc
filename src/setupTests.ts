@@ -3,6 +3,9 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom/extend-expect';
+import { setupMswServer } from '../mocks/server';
+
+setupMswServer();
 
 // Mock matchMedia and animation frame APIs used by Ionic internals in jsdom.
 window.matchMedia =

@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { IonButton, IonItem, IonLabel, IonList, IonPopover } from '@ionic/react';
-import { useI18n } from '../i18n';
+import { useI18n } from '../../i18n';
 
+/**
+ * Header control used to switch UI locale between English and Spanish.
+ * @returns Language toggle button and popover options.
+ */
 export function LanguageSelector() {
   const { locale, setLocale, t } = useI18n();
   const [isOpen, setIsOpen] = useState(false);

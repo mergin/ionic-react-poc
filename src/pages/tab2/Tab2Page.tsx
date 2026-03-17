@@ -10,9 +10,9 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-import { LanguageSelector } from '../components/LanguageSelector';
-import { useI18n } from '../i18n';
-import './Tab2.css';
+import { LanguageSelector } from '../../components/language-selector';
+import { useI18n } from '../../i18n';
+import './Tab2Page.css';
 
 interface GalleryImage {
   id: string;
@@ -84,7 +84,10 @@ const Tab2: React.FC = () => {
           <section className="gallery-grid" aria-label={t('gallery.feedAriaLabel')}>
             {images.map(image => (
               <article className="gallery-card" key={image.id}>
-                <IonImg src={image.download_url} alt={t('gallery.imageAlt', { author: image.author })} />
+                <IonImg
+                  src={image.download_url}
+                  alt={t('gallery.imageAlt', { author: image.author })}
+                />
               </article>
             ))}
           </section>

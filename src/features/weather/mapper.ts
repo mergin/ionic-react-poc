@@ -1,11 +1,14 @@
+/** Supported measurement units used by weather requests. */
 export type Unit = 'metric' | 'imperial';
 
+/** OpenWeather weather condition descriptor. */
 export interface OpenWeatherCondition {
   main: string;
   description: string;
   icon: string;
 }
 
+/** OpenWeather temperature payload. */
 export interface OpenWeatherMain {
   temp: number;
   feels_like: number;
@@ -13,6 +16,7 @@ export interface OpenWeatherMain {
   temp_max: number;
 }
 
+/** OpenWeather current-weather response shape. */
 export interface OpenWeatherCurrent {
   weather: OpenWeatherCondition[];
   main: OpenWeatherMain;
@@ -22,17 +26,20 @@ export interface OpenWeatherCurrent {
   timezone: number;
 }
 
+/** Single forecast list entry returned by OpenWeather. */
 export interface OpenWeatherForecastItem {
   dt: number;
   weather: OpenWeatherCondition[];
   main: OpenWeatherMain;
 }
 
+/** OpenWeather forecast response shape. */
 export interface OpenWeatherForecast {
   list: OpenWeatherForecastItem[];
   city: { timezone: number };
 }
 
+/** Normalized weather card model for UI sections. */
 export interface ForecastEntry {
   label: string;
   weatherLabel: string;
@@ -43,14 +50,31 @@ export interface ForecastEntry {
 const HOURLY_LIMIT = 8;
 const DAILY_LIMIT = 5;
 
+/**
+ * Converts Celsius values to Fahrenheit.
+ * @param celsius Temperature in Celsius.
+ * @returns Temperature in Fahrenheit.
+ */
 function toImperial(celsius: number): number {
   return celsius * (9 / 5) + 32;
 }
 
+/**
+ * Builds OpenWeather icon URL from icon code.
+ * @param iconCode OpenWeather icon code.
+ * @returns Full icon URL.
+ */
 export function weatherIconUrl(iconCode: string | undefined): string {
   return `https://openweathermap.org/img/wn/${iconCode ?? '01d'}@2x.png`;
 }
 
+/**
+ * Formats a UTC timestamp shifted by city timezone offset.
+ * @param timestampUtc Unix timestamp in seconds.
+ * @param timezoneOffsetSeconds Offset from UTC in seconds.
+ * @param format Date formatting options.
+ * @returns Formatted local date string.
+ */
 export function formatDateTime(
   timestampUtc: number,
   timezoneOffsetSeconds: number,
@@ -62,6 +86,11 @@ export function formatDateTime(
   );
 }
 
+/**
+ * Maps forecast payload into hourly card entries.
+ * @param forecast OpenWeather forecast response.
+ * @returns Hourly weather entries for UI.
+ */
 export function mapHourlyForecastEntries(forecast: OpenWeatherForecast): ForecastEntry[] {
   return forecast.list.slice(0, HOURLY_LIMIT).map(item => ({
     label: formatDateTime(item.dt, forecast.city.timezone, {
@@ -75,6 +104,11 @@ export function mapHourlyForecastEntries(forecast: OpenWeatherForecast): Forecas
   }));
 }
 
+/**
+ * Maps forecast payload into one entry per day.
+ * @param forecast OpenWeather forecast response.
+ * @returns Daily weather entries for UI.
+ */
 export function mapDailyForecastEntries(forecast: OpenWeatherForecast): ForecastEntry[] {
   const byDay = new Map<string, OpenWeatherForecastItem>();
 
@@ -99,6 +133,12 @@ export function mapDailyForecastEntries(forecast: OpenWeatherForecast): Forecast
     }));
 }
 
+/**
+ * Builds deterministic fallback weather data for offline/mock resilience.
+ * @param cityName Requested city name.
+ * @param selectedUnit Selected measurement unit.
+ * @returns Synthetic current and forecast weather payloads.
+ */
 export function buildFallbackWeatherData(
   cityName: string,
   selectedUnit: Unit,
