@@ -1,0 +1,70 @@
+{
+  "common": {
+    "language": "Idioma",
+    "languageSelector": "Selector de idioma",
+    "switchToEnglish": "Cambiar idioma a inglés",
+    "switchToSpanish": "Cambiar idioma a español",
+    "dismiss": "Cerrar",
+    "englishShort": "EN",
+    "spanishShort": "ES"
+  },
+  "tabs": {
+    "tab1": "Red Social",
+    "tab2": "Galería de Imágenes",
+    "tab3": "Clima",
+    "tab2Page": "Página de la Galería de Imágenes",
+    "tab3Page": "Página del Clima"
+  },
+  "explore": {
+    "prefix": "Explora",
+    "uiComponents": "Componentes de UI",
+    "uiComponentsLinkAria": "Componentes de UI (se abre en una pestaña nueva)"
+  },
+  "social": {
+    "loading": "Cargando publicaciones...",
+    "loadError": "No se pudieron cargar las publicaciones.",
+    "actionsAriaLabel": "Acciones de la publicación",
+    "like": "Me gusta",
+    "repostAriaLabel": "Repostear",
+    "favoriteAriaLabel": "Favorito",
+    "replies": "Respuestas",
+    "avatarAlt": "Avatar de {{name}}",
+    "feedAriaLabel": "Publicaciones de redes sociales"
+  },
+  "gallery": {
+    "loading": "Cargando imagenes...",
+    "loadError": "No se pudieron cargar las imagenes.",
+    "feedAriaLabel": "Galeria de imagenes",
+    "imageAlt": "Foto de {{author}}"
+  },
+  "weather": {
+    "loading": "Cargando clima...",
+    "loadError": "No se pudieron cargar los datos del clima.",
+    "searchPlaceholder": "Buscar ciudad",
+    "searchAriaLabel": "Buscar clima por ciudad",
+    "unitToggleAriaLabel": "Cambiar entre Celsius y Fahrenheit",
+    "unitCelsius": "C°",
+    "unitFahrenheit": "F°",
+    "wind": "Viento",
+    "feelsLike": "Sensación térmica",
+    "highLow": "Máx/Mín",
+    "hourlyTitle": "Pronóstico por Hora",
+    "dailyTitle": "Pronóstico Diario"
+  },
+  "tab2Feature": {
+    "ariaLabel": "Funcionalidad CSS moderna de la pestaña 2",
+    "eyebrow": "Laboratorio CSS moderno",
+    "title": "Container Queries + Glass Mesh",
+    "description": "Un panel responsive que se adapta al tamaño de su contenedor y usa gradientes por capas basados en el tema para un estilo móvil moderno y pulido.",
+    "chips": {
+      "containerQueries": "Container Queries",
+      "glassMesh": "Glass Mesh",
+      "themeAware": "Basado en tema"
+    }
+  },
+  "errors": {
+    "network": "Problema de conexión. Revisa tu internet e inténtalo de nuevo.",
+    "server": "Error del servidor. Inténtalo nuevamente en un momento.",
+    "generic": "Algo salió mal. Inténtalo de nuevo."
+  }
+}
